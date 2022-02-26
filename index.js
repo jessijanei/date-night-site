@@ -9,9 +9,9 @@ function renderRecipes(recipeArray) {
               <p class="recipe-ingredients">${renderIngredients(
                 currentRecipe.extendedIngredients
               )}</p>
-              <p class="recipe-description">${
-                currentRecipe.analyzedInstructions
-              }</p>
+              <p class="recipe-description">${renderSteps(
+                currentRecipe.analyzedInstructions[0].steps
+              )}</p>
             </div>
             </div>
           </div>`;
@@ -43,6 +43,14 @@ function renderIngredients(ingredientsArray) {
   return ingredientsHTML.join("");
 }
 
+function renderSteps(stepsArray) {
+  let stepsHTML = stepsArray.map(function (currentStep) {
+    // console.log(currentStep[0].steps);
+    return `<p>${currentStep.step}</p>`;
+  });
+
+  return stepsHTML.join("");
+}
 //adding event listener to cuisine submit button
 let submit = document.getElementById("cuisine-form");
 let results = document.getElementById("result");
@@ -51,4 +59,4 @@ submit.addEventListener("submit", handleSubmit);
 //fetch cocktail API
 // fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
 //   .then((response) => response.json())
-//  .then((data) => console.log(data));
+//  .then((data) => console.log(data))
