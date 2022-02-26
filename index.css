@@ -37,3 +37,39 @@ img {
 .recipe {
   padding: 10px;
 }
+.header {
+  width: 100%;
+  padding: 60px 0;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+h1 {
+  text-align: center;
+  font-style: italic;
+}
+img {
+  height: auto;
+  padding: 20px;
+  width: 50%;
+  float: left;
+}
+
+.site-summary {
+  width: 50%;
+  padding: 20px;
+  float: left;
+  text-align: center;
+  font-size: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.recipe {
+  padding: 10px;
+}
