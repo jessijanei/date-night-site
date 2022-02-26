@@ -51,9 +51,17 @@ function renderSteps(stepsArray) {
 
   return stepsHTML.join("");
 }
+
+let handleButton = (event) => {
+  fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+     .then((response) => response.json())
+   .then((data) => console.log(data))
+}
 //adding event listener to cuisine submit button
 let submit = document.getElementById("cuisine-form");
 let results = document.getElementById("result");
+let cocktailBtn = document.getElementById("cocktail");
+cocktailBtn.addEventListener("click", handleButton);
 submit.addEventListener("submit", handleSubmit);
 
 //fetch cocktail API
