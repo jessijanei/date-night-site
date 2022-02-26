@@ -27,3 +27,13 @@ img {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-style: italic;
 }
+
+.result{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.recipe{
+  padding: 10px;
+}

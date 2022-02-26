@@ -83,15 +83,65 @@
     </form>
 
     <h3>Wine</h3>
-      <form>
-        <select name="wine">
-            <option value="select">Select</option>
-            <option value="red">Red</option>
-            <option value="white">White</option>
-            <option value="sparkling">Sparkling</option>
-        </select>
-        <button id="submitWineBtn"type=”submit”>Wine me!</button>
-    </form>
+    <form>
+      <select name="wine">
+          <option value="select">Select</option>
+          <option value="red">Red</option>
+          <option value="white">White</option>
+          <option value="sparkling">Sparkling</option>
+      </select>
+      <button id="submitWineBtn"type=”submit”>Wine me!</button>
+  </form>
+  
+    <div class="result" id="result">
+      <!--recipes generate here-->
+
+
+      <div class="recipe">
+        <div class="card" style="width: 18rem;">
+        <img src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-3-1200.jpg">
+        <div class="card-body">
+          <h5 class="recipe-title"></h5>
+          <p class="recipe-ingredients"></p>
+          <p class="recipe-description"></p>
+        </div>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <div class="card" style="width: 18rem;">
+        <img src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-3-1200.jpg">
+        <div class="card-body">
+          <h5 class="recipe-title">${currentRecipe.title}</h5>
+          <p class="recipe-ingredients">${currentRecipe.extendedIngredients}</p>
+          <p class="recipe-description">${currentRecipe.analyzedInstructions}</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <div class="card" style="width: 18rem;">
+        <img src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-3-1200.jpg">
+        <div class="card-body">
+          <h5 class="recipe-title">${currentRecipe.title}</h5>
+          <p class="recipe-ingredients">${currentRecipe.extendedIngredients}</p>
+          <p class="recipe-description">${currentRecipe.analyzedInstructions}</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <div class="card" style="width: 18rem;">
+        <img src="https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-3-1200.jpg">
+        <div class="card-body">
+          <h5 class="recipe-title">${currentRecipe.title}</h5>
+          <p class="recipe-ingredients">${currentRecipe.extendedIngredients}</p>
+          <p class="recipe-description">${currentRecipe.analyzedInstructions}</p>
+        </div>
+        </div>
+      </div>
+      
+
 <script src="index.js"></script>
 </body>
 </html>
