@@ -27,7 +27,7 @@ let handleSubmit = (event) => {
 
   //fetch recipe API
   fetch(
-    "https://api.spoonacular.com/recipes/complexSearch?apiKey=78d7dfa988514b18b52ac1ab9f833947&cuisine=italian&addRecipeInformation=true&fillIngredients=true"
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=78d7dfa988514b18b52ac1ab9f833947&cuisine=${event.target.cuisine.value}&addRecipeInformation=true&fillIngredients=true`
   )
     .then((response) => response.json())
     .then((data) => {
