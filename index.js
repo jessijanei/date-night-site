@@ -22,8 +22,8 @@ function renderRecipes(recipeArray) {
 //render function for random cocktail:
 function renderCocktail(cocktailArray) {
   let cocktailHTML = cocktailArray.map(function (currentCocktail) {
-    let cocktailString = `  <div class=cocktail>
-            <div class="card" style="width: 18rem;">
+    let cocktailString = `  <div class=cocktail">
+            <div class="cocktail-card"  style="width: 700px;">
             <img src=${currentCocktail.strDrinkThumb}>
             <div class="card-body">
               <h5 class="cocktail-title">${currentCocktail.strDrink}</h5>`;
