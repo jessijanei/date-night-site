@@ -19,6 +19,44 @@ function renderRecipes(recipeArray) {
   return recipeHTML.join("");
 }
 
+//render function for random cocktail:
+function renderCocktail(cocktailArray) {
+  let cocktailHTML = cocktailArray.map(function (currentCocktail) {
+    let cocktailString = `  <div class=cocktail>
+            <div class="card" style="width: 18rem;">
+            <img src=${currentCocktail.strDrinkThumb}>
+            <div class="card-body">
+              <h5 class="cocktail-title">${currentCocktail.strDrink}</h5>`;
+
+              if (currentCocktail.strIngredient1 != null){
+                cocktailString += `<p>${currentCocktail.strMeasure1} ${currentCocktail.strIngredient1}</p>`
+              }
+              if (currentCocktail.strIngredient2 != null){
+                cocktailString += `<p>${currentCocktail.strMeasure2} ${currentCocktail.strIngredient2}</p>`
+              }
+              if (currentCocktail.strIngredient3 != null){
+                cocktailString += `<p>${currentCocktail.strMeasure3} ${currentCocktail.strIngredient3}</p>`
+              }
+              if (currentCocktail.strIngredient4 != null){
+                cocktailString += `<p>${currentCocktail.strMeasure4} ${currentCocktail.strIngredient4}</p>`
+              }
+              if (currentCocktail.strIngredient5 != null){
+                cocktailString += `<p>${currentCocktail.strMeasure5} ${currentCocktail.strIngredient5}</p>`
+              }
+     cocktailString += `
+              <div class="cocktail-instructions">
+              ${currentCocktail.strInstructions}
+              </div>
+              </div>
+            </div>
+          </div>`;
+
+          return cocktailString;
+  });
+  return cocktailHTML.join("");
+}
+
+
 //function for handling submit event
 let handleSubmit = (event) => {
   event.preventDefault();
@@ -53,9 +91,14 @@ function renderSteps(stepsArray) {
 }
 
 let handleButton = (event) => {
+  console.log(event);
+
   fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
      .then((response) => response.json())
-   .then((data) => console.log(data))
+     .then((data) => {
+     console.log(data);
+     cocktailBtn.innerHTML = renderCocktail(data.drinks);
+   })
 }
 //adding event listener to cuisine submit button
 let submit = document.getElementById("cuisine-form");
@@ -64,7 +107,3 @@ let cocktailBtn = document.getElementById("cocktail");
 cocktailBtn.addEventListener("click", handleButton);
 submit.addEventListener("submit", handleSubmit);
 
-//fetch cocktail API
-// fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
-//   .then((response) => response.json())
-//  .then((data) => console.log(data))
