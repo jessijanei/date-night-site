@@ -28,6 +28,7 @@ function renderCocktail(cocktailArray) {
             <div class="card-body">
               <h5 class="cocktail-title">${currentCocktail.strDrink}</h5>`;
 
+            // if else statements for displaying cocktail ingredients:
               if (currentCocktail.strIngredient1 != null && currentCocktail.strMeasure1 != null){
                 cocktailString += `<p>${currentCocktail.strMeasure1} ${currentCocktail.strIngredient1}</p>`
               }else if (currentCocktail.strIngredient1 != null){
@@ -93,7 +94,6 @@ function renderIngredients(ingredientsArray) {
 
 function renderSteps(stepsArray) {
   let stepsHTML = stepsArray.map(function (currentStep) {
-    // console.log(currentStep[0].steps);
     return `<p>${currentStep.step}</p>`;
   });
 
