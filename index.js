@@ -28,20 +28,30 @@ function renderCocktail(cocktailArray) {
             <div class="card-body">
               <h5 class="cocktail-title">${currentCocktail.strDrink}</h5>`;
 
-              if (currentCocktail.strIngredient1 != null){
+              if (currentCocktail.strIngredient1 != null && currentCocktail.strMeasure1 != null){
                 cocktailString += `<p>${currentCocktail.strMeasure1} ${currentCocktail.strIngredient1}</p>`
+              }else if (currentCocktail.strIngredient1 != null){
+                cocktailString += `<p>${currentCocktail.strIngredient1}</p>`
               }
-              if (currentCocktail.strIngredient2 != null){
+              if (currentCocktail.strIngredient2 != null && currentCocktail.strMeasure2 != null){
                 cocktailString += `<p>${currentCocktail.strMeasure2} ${currentCocktail.strIngredient2}</p>`
+              }else if (currentCocktail.strIngredient2 != null){
+                cocktailString += `<p>${currentCocktail.strIngredient2}</p>`
               }
-              if (currentCocktail.strIngredient3 != null){
+              if (currentCocktail.strIngredient3 != null && currentCocktail.strMeasure3 != null){
                 cocktailString += `<p>${currentCocktail.strMeasure3} ${currentCocktail.strIngredient3}</p>`
+              }else if (currentCocktail.strIngredient3 != null){
+                cocktailString += `<p>${currentCocktail.strIngredient3}</p>`
               }
-              if (currentCocktail.strIngredient4 != null){
+              if (currentCocktail.strIngredient4 != null && currentCocktail.strMeasure4 != null){
                 cocktailString += `<p>${currentCocktail.strMeasure4} ${currentCocktail.strIngredient4}</p>`
+              }else if (currentCocktail.strIngredient4 != null){
+                cocktailString += `<p>${currentCocktail.strIngredient4}</p>`
               }
-              if (currentCocktail.strIngredient5 != null){
+              if (currentCocktail.strIngredient5 != null && currentCocktail.strMeasure5 != null){
                 cocktailString += `<p>${currentCocktail.strMeasure5} ${currentCocktail.strIngredient5}</p>`
+              }else if (currentCocktail.strIngredient5 != null){
+                cocktailString += `<p>${currentCocktail.strIngredient5}</p>`
               }
      cocktailString += `
               <div class="cocktail-instructions">

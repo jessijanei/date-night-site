@@ -45,12 +45,12 @@ img {
   display: table-cell;
 }
 
-#submitBtn{
+#submitBtn, #submitWineBtn, #cocktail{
   border-radius: 16px;
 }
 
-#submitBtn:hover{
-  background-color: rgb(207, 183, 151);
+#submitBtn:hover, #submitWineBtn:hover, #cocktail:hover{
+  background-color: rgb(199, 157, 85);
 }
 
 
