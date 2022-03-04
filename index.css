@@ -1,5 +1,7 @@
-body {
-  background-color: #acbda1;
+@media screen and (min-width: 480px) {
+  body {
+    background-color: #acbda1;
+  }
 }
 
 .header {
@@ -22,10 +24,9 @@ img {
 .site-summary {
   width: 50%;
   padding: 20px;
-
   float: left;
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-style: italic;
 }
@@ -42,6 +43,14 @@ img {
   padding: 10px;
 }
 
+#cocktail-title {
+  clear: both;
+}
+
+.image img {
+  display: block;
+}
+
 .card {
   display: table-cell;
 }
@@ -49,7 +58,7 @@ img {
 #submitBtn,
 #submitWineBtn,
 #cocktail,
-#movie {
+.btn-filmSearch {
   border-radius: 16px;
   border-color: transparent;
 }
@@ -57,7 +66,7 @@ img {
 #submitBtn:hover,
 #submitWineBtn:hover,
 #cocktail:hover,
-#movie:hover {
+.btn-filmSearch:hover {
   background-color: rgb(199, 157, 85);
 }
 

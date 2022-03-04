@@ -22,8 +22,8 @@ function renderRecipes(recipeArray) {
 //render function for random cocktail:
 function renderCocktail(cocktailArray) {
   let cocktailHTML = cocktailArray.map(function (currentCocktail) {
-    let cocktailString = `  <div class=cocktail">
-            <div class="cocktail-card"  style="width: 700px;">
+    let cocktailString = `  <div class=cocktail col-12 col-md-6">
+            <div class="cocktail-card">
             <img src=${currentCocktail.strDrinkThumb}>
             <div class="card-body">
               <h5 class="cocktail-title">${currentCocktail.strDrink}</h5>`;
@@ -136,8 +136,8 @@ const btn = document.querySelector(".btn-filmSearch");
 //DOM DATA
 function renderMovies(moviesArray) {
   let moviesHTML = moviesArray.map(function (currentMovie) {
-    return `<div class="movie">
-         <div class="card" style="width: 700px;">
+    return `<div class="movie col-12 col-lg-6">
+         <div class="card" >
          <img src=${"https://image.tmdb.org/t/p/w500"}${currentMovie.poster_path}>
          <div class="card-body">
          <h5 class="movie-title">${currentMovie.original_title}</h5>
@@ -162,6 +162,7 @@ btn.addEventListener("click", function () {
     .then((Response) => Response.json())
     .then((data) => {
       console.log(data);
-      btn.innerHTML = renderMovies(data.results);
+      let movies = document.getElementById("movie");
+      movies.innerHTML = renderMovies(data.results);
     });
 });
