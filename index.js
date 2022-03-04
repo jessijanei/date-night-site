@@ -28,33 +28,48 @@ function renderCocktail(cocktailArray) {
             <div class="card-body">
               <h5 class="cocktail-title">${currentCocktail.strDrink}</h5>`;
 
-            // if else statements for displaying cocktail ingredients:
-              if (currentCocktail.strIngredient1 != null && currentCocktail.strMeasure1 != null){
-                cocktailString += `<p>${currentCocktail.strMeasure1} ${currentCocktail.strIngredient1}</p>`
-              }else if (currentCocktail.strIngredient1 != null){
-                cocktailString += `<p>${currentCocktail.strIngredient1}</p>`
-              }
-              if (currentCocktail.strIngredient2 != null && currentCocktail.strMeasure2 != null){
-                cocktailString += `<p>${currentCocktail.strMeasure2} ${currentCocktail.strIngredient2}</p>`
-              }else if (currentCocktail.strIngredient2 != null){
-                cocktailString += `<p>${currentCocktail.strIngredient2}</p>`
-              }
-              if (currentCocktail.strIngredient3 != null && currentCocktail.strMeasure3 != null){
-                cocktailString += `<p>${currentCocktail.strMeasure3} ${currentCocktail.strIngredient3}</p>`
-              }else if (currentCocktail.strIngredient3 != null){
-                cocktailString += `<p>${currentCocktail.strIngredient3}</p>`
-              }
-              if (currentCocktail.strIngredient4 != null && currentCocktail.strMeasure4 != null){
-                cocktailString += `<p>${currentCocktail.strMeasure4} ${currentCocktail.strIngredient4}</p>`
-              }else if (currentCocktail.strIngredient4 != null){
-                cocktailString += `<p>${currentCocktail.strIngredient4}</p>`
-              }
-              if (currentCocktail.strIngredient5 != null && currentCocktail.strMeasure5 != null){
-                cocktailString += `<p>${currentCocktail.strMeasure5} ${currentCocktail.strIngredient5}</p>`
-              }else if (currentCocktail.strIngredient5 != null){
-                cocktailString += `<p>${currentCocktail.strIngredient5}</p>`
-              }
-     cocktailString += `
+    // if else statements for displaying cocktail ingredients:
+    if (
+      currentCocktail.strIngredient1 != null &&
+      currentCocktail.strMeasure1 != null
+    ) {
+      cocktailString += `<p>${currentCocktail.strMeasure1} ${currentCocktail.strIngredient1}</p>`;
+    } else if (currentCocktail.strIngredient1 != null) {
+      cocktailString += `<p>${currentCocktail.strIngredient1}</p>`;
+    }
+    if (
+      currentCocktail.strIngredient2 != null &&
+      currentCocktail.strMeasure2 != null
+    ) {
+      cocktailString += `<p>${currentCocktail.strMeasure2} ${currentCocktail.strIngredient2}</p>`;
+    } else if (currentCocktail.strIngredient2 != null) {
+      cocktailString += `<p>${currentCocktail.strIngredient2}</p>`;
+    }
+    if (
+      currentCocktail.strIngredient3 != null &&
+      currentCocktail.strMeasure3 != null
+    ) {
+      cocktailString += `<p>${currentCocktail.strMeasure3} ${currentCocktail.strIngredient3}</p>`;
+    } else if (currentCocktail.strIngredient3 != null) {
+      cocktailString += `<p>${currentCocktail.strIngredient3}</p>`;
+    }
+    if (
+      currentCocktail.strIngredient4 != null &&
+      currentCocktail.strMeasure4 != null
+    ) {
+      cocktailString += `<p>${currentCocktail.strMeasure4} ${currentCocktail.strIngredient4}</p>`;
+    } else if (currentCocktail.strIngredient4 != null) {
+      cocktailString += `<p>${currentCocktail.strIngredient4}</p>`;
+    }
+    if (
+      currentCocktail.strIngredient5 != null &&
+      currentCocktail.strMeasure5 != null
+    ) {
+      cocktailString += `<p>${currentCocktail.strMeasure5} ${currentCocktail.strIngredient5}</p>`;
+    } else if (currentCocktail.strIngredient5 != null) {
+      cocktailString += `<p>${currentCocktail.strIngredient5}</p>`;
+    }
+    cocktailString += `
               <div class="cocktail-instructions">
               ${currentCocktail.strInstructions}
               </div>
@@ -62,11 +77,10 @@ function renderCocktail(cocktailArray) {
             </div>
           </div>`;
 
-          return cocktailString;
+    return cocktailString;
   });
   return cocktailHTML.join("");
 }
-
 
 //function for handling submit event
 let handleSubmit = (event) => {
@@ -104,12 +118,12 @@ let handleButton = (event) => {
   console.log(event);
 
   fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-     .then((response) => response.json())
-     .then((data) => {
-     console.log(data);
-     cocktailBtn.innerHTML = renderCocktail(data.drinks);
-   })
-}
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      cocktailBtn.innerHTML = renderCocktail(data.drinks);
+    });
+};
 //adding event listener to cuisine submit button
 let submit = document.getElementById("cuisine-form");
 let results = document.getElementById("result");
@@ -117,3 +131,37 @@ let cocktailBtn = document.getElementById("cocktail");
 cocktailBtn.addEventListener("click", handleButton);
 submit.addEventListener("submit", handleSubmit);
 
+const btn = document.querySelector(".btn-filmSearch");
+
+//DOM DATA
+function renderMovies(moviesArray) {
+  let moviesHTML = moviesArray.map(function (currentMovie) {
+    return `<div class="movie">
+         <div class="card" style="width: 700px;">
+         <img src=${"https://image.tmdb.org/t/p/w500"}${currentMovie.poster_path}>
+         <div class="card-body">
+         <h5 class="movie-title">${currentMovie.original_title}</h5>
+    <p class="movie-summary"> ${currentMovie.overview}</p>
+            </div>
+            </div>
+            </div>`;
+  });
+
+  function getRandomMovie(randomMovie) {
+    let movie = moviesArray[Math.floor(Math.random() * moviesArray.length)];
+    return randomMovie;
+  }
+  return moviesHTML.join("");
+}
+
+//ADD EVENT LISTENER AND FETCH API
+btn.addEventListener("click", function () {
+  fetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=82e1848b816f617aaf08521963085a8e&language=en-US&page=1`
+  )
+    .then((Response) => Response.json())
+    .then((data) => {
+      console.log(data);
+      btn.innerHTML = renderMovies(data.results);
+    });
+});

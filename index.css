@@ -22,6 +22,7 @@ img {
 .site-summary {
   width: 50%;
   padding: 20px;
+
   float: left;
   text-align: center;
   font-size: 30px;
@@ -45,12 +46,23 @@ img {
   display: table-cell;
 }
 
-#submitBtn, #submitWineBtn, #cocktail{
+#submitBtn,
+#submitWineBtn,
+#cocktail,
+#movie {
   border-radius: 16px;
   border-color: transparent;
 }
 
-#submitBtn:hover, #submitWineBtn:hover, #cocktail:hover{
+#submitBtn:hover,
+#submitWineBtn:hover,
+#cocktail:hover,
+#movie:hover {
   background-color: rgb(199, 157, 85);
 }
 
+.movie {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
